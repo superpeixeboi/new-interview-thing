@@ -22,7 +22,9 @@ O projeto está organizado em 3 docker containers inter-dependentes:
 Uma versão relativamente atual do docker é o único pré-requisito.
 Clonando o repositório, use o terminal para chegar ao diretório raiz do projeto.
 ### Para rodar os containers
-`docker compose up -d`
+```
+docker compose up -d
+```
 ### Para verificar os logs
 ```
 docker compose logs mongo
@@ -30,6 +32,8 @@ docker compose logs backend
 docker compose logs frontend
 ```
 ### Para parar os containers
-`docker compose down`
+```
+docker compose down
+```
 ### Para acessar a aplicação
 [localhost:8080/content]
