@@ -36,4 +36,4 @@ docker compose logs frontend
 docker compose down
 ```
 ### Para acessar a aplicação
-[localhost:8080/content]
+(localhost:8080/content)
