@@ -5,6 +5,7 @@ Esse projeto foi pensado para demonstrar:
 * uso de containers para execução e deployment
 * uso de MongoDB como storage layer
 * uso de React para construir interfaces
+* uso de i18n em uma implementação simplificada
 * uso de bibliotecas simples de CSS para construir layout
 * arquitetura REST priorizando princípios de:
   * separation of concearns;

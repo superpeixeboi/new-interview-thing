@@ -7,6 +7,11 @@ const router = express.Router()
 const contentMiddleware = new Middleware(Content)
 router.get('/content/:id', contentMiddleware.getById())
 router.get('/content', contentMiddleware.find())
+router.put('/content/:id', 
+  contentMiddleware.newDocument(),
+  contentMiddleware.validate(),
+  contentMiddleware.update()
+)
 router.post('/content', 
   contentMiddleware.newDocument(),
   contentMiddleware.validate(),

@@ -1,5 +1,4 @@
 const express = require('express')
-const path = require('path')
 const cookieParser = require('cookie-parser')
 const bodyParser = require('body-parser')
 const cors = require('cors')
@@ -12,7 +11,7 @@ const PORT = 3000
 
 db.connect(app)
 
-app.use(cors())
+app.use(cors({ methods: ['GET', 'PUT', 'POST']}))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(cookieParser())

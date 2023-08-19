@@ -46,6 +46,17 @@ class Middleware {
     }
   }
 
+  update() {
+    const Model = this.Model
+    return async (req, res, next) => {
+      await Model.findByIdAndUpdate(
+        req.params.id,
+        res.document.toObject()
+      )
+      next()
+    }
+  }
+
   static respond() {
     return (req, res, next) => res.send(res.result)
   }
