@@ -32,7 +32,6 @@ function App() {
       </div>
       <Router>
         <Routes>
-          {/* <Route path="/content/:id"><ContentViewPage /></Route> */}
           <Route path="/content/new" element={<ContentFormPage />} />
           <Route path="/content/edit/:contentId" element={<ContentFormPage />} />
           <Route path="/content" element={<ContentListPage />} />

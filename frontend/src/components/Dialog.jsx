@@ -17,20 +17,18 @@ function Dialog (props) {
 
 function ErrorDialog (props) {
   const { error } = props
-  
   const getMessage = () => {
     if (error && error.code === 'ERR_BAD_REQUEST') {
       return (
         <ul className="py-4">
-          {Object.entries(error.response.data.errors).map(([ fieldName, { message }]) => (
-            <li>{__(fieldName)}: {__(message)}</li>
+          {Object.entries(error.response.data.errors).map(([ fieldName, { message }], idx) => (
+            <li key={`error-${idx}`}>{__(fieldName)}: {__(message)}</li>
           ))}
         </ul>
       )
     }
     return <p>{__('Ação falhou')}</p>
   }
-  
   return (
     <dialog id={props.id} className="modal">
       <form method="dialog" className="modal-box">
@@ -44,9 +42,7 @@ function ErrorDialog (props) {
   )
 }
 
-
 export {
   Dialog,
   ErrorDialog
 }
-
