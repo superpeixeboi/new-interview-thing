@@ -74,7 +74,7 @@ function ContentListLayout ({ content, setContent, message, setMessage, submit }
           <input
             type="text"
             name="title"
-            data-test-id="title"
+            data-testid="title"
             className="input input-bordered md:w-2/3 sm:w-full"
             value={content.title}
             onChange={handleChange}
@@ -91,12 +91,12 @@ function ContentListLayout ({ content, setContent, message, setMessage, submit }
             {__('Tamanho máximo permitido de 5MB.')}
           </p>
           <div className="flex gap-2">
-            <div className="s">
+            <div>
               <label htmlFor="coverImage" className="btn btn-outline btn-accent w-48">{__('Selecionar Imagem')}</label>
               <input
                 type="file"
                 name="coverImage"
-                data-test-id="coverImage"
+                data-testid="coverImage"
                 accept="image/*"
                 id="coverImage"
                 className="hidden"
@@ -118,7 +118,7 @@ function ContentListLayout ({ content, setContent, message, setMessage, submit }
           <input
             type="text"
             name="link"
-            data-test-id="link"
+            data-testid="link"
             placeholder="http://"
             className="input input-bordered md:w-2/3 sm:w-full"
             value={content.link}
@@ -131,10 +131,12 @@ function ContentListLayout ({ content, setContent, message, setMessage, submit }
           <label className="label">
             <span className="label-text text-lg font-bold">{__('Escreva a baixo a sua postagem')}</span>
           </label>
-          <div className="md:w-2/3 sm:w-full">
+          <div 
+            data-testid="body"
+            className="md:w-2/3 sm:w-full"
+          >
             <ReactQuill
               className="h-48"
-              data-test-id="body"
               value={content.body}
               onChange={value => handleChange({ target: {name: 'body', value}})}
             />
@@ -148,7 +150,7 @@ function ContentListLayout ({ content, setContent, message, setMessage, submit }
           <select
             className="select select-bordered w-full max-w-xs"
             name="access"
-            data-test-id="access"
+            data-testid="access"
             value={content.access}
             onChange={handleChange}
           >
@@ -165,7 +167,7 @@ function ContentListLayout ({ content, setContent, message, setMessage, submit }
           <Link className="link link-accent mr-4" to="/content">{__('Cancelar')}</Link>
           <div className="join">
             <div 
-              data-test-id="dropdownAction"
+              data-testid="dropdownAction"
               className={`dropdown dropdown-top ${isScheduleShown && 'dropdown-open'}`}
             >
               <label tabIndex={0} className="btn btn-primary mr-1 join-item">^</label>
@@ -175,7 +177,7 @@ function ContentListLayout ({ content, setContent, message, setMessage, submit }
                     <input
                       type="date"
                       name="publishedAt"
-                      data-test-id="publishedAtDate"
+                      data-testid="publishedAtDate"
                       placeholder="Dia de publicação"
                       className="input input-bordered w-full"
                       value={content.publishedAt && dayjs(content.publishedAt).format(DATE_FORMAT)}
@@ -184,7 +186,7 @@ function ContentListLayout ({ content, setContent, message, setMessage, submit }
                     <input
                       type="time"
                       name="publishedAt"
-                      data-test-id="publishedAtTime"
+                      data-testid="publishedAtTime"
                       placeholder="Hora de publicação"
                       className="input input-bordered w-full"
                       value={content.publishedAt && dayjs(content.publishedAt).format(TIME_FORMAT)}
@@ -194,7 +196,7 @@ function ContentListLayout ({ content, setContent, message, setMessage, submit }
                 ) : (
                   <ul tabIndex={0}>
                     <li
-                      data-test-id="showScheduleAction"
+                      data-testid="showScheduleAction"
                       className="cursor-pointer"
                       onClick={toggleSchedule}
                     >{__('Agendar Postagem')}</li>

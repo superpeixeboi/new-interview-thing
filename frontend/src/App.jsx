@@ -7,6 +7,7 @@ import {
 } from 'react-router-dom'
 import ContentListPage from './pages/Content/ContentListPage/ContentListPage'
 import ContentFormPage from './pages/Content/ContentFormPage/ContentFormPage'
+import __ from './i18n'
 
 import './App.css'
 
@@ -16,12 +17,12 @@ function App() {
       <div className="navbar bg-red-50 mb-16">
         <div className="container mx-auto">
           <div className="flex-1">
-            <a className="text-xl text-red-400 font-bold">APOIA.se</a>
+            <a className="text-xl text-red-400 font-bold">{__('APOIA.se')}</a>
           </div>
           <div className="flex-none">
-            <label className="btn btn-sm btn-ghost">Modalidades</label>
-            <label className="btn btn-sm btn-ghost">Recursos</label>
-            <label className="btn btn-sm btn-ghost">Buscar campanhas</label>
+            <label className="btn btn-sm btn-ghost">{__('Modalidades')}</label>
+            <label className="btn btn-sm btn-ghost">{__('Recursos')}</label>
+            <label className="btn btn-sm btn-ghost">{__('Buscar campanhas')}</label>
             <label tabIndex={0} className="btn btn-sm btn-ghost btn-circle avatar">
               <div className="w-10 rounded-full">
                 <img src={PIC} />
@@ -39,7 +40,7 @@ function App() {
       </Router>
       <footer className="footer p-10 mt-16 bg-neutral text-neutral-content">
         <div className="mx-auto">
-          <span className="font-bold text-xl">APOIA.se</span>
+          <span className="font-bold text-xl">{__('APOIA.se')}</span>
         </div>
       </footer>
     </div>
