@@ -96,7 +96,7 @@ function ContentListLayout ({ content, setContent, message, setMessage, submit }
               <input
                 type="file"
                 name="coverImage"
-                data-testid="coverImage"
+                data-testid="coverImageField"
                 accept="image/*"
                 id="coverImage"
                 className="hidden"
@@ -105,7 +105,11 @@ function ContentListLayout ({ content, setContent, message, setMessage, submit }
             </div>
             {content.coverImage && (
               <figure>
-                <img className="max-h-12" src={content.coverImage} />
+                <img
+                  className="max-h-12"
+                  data-testid="coverImage"
+                  src={content.coverImage}
+                />
               </figure>)}
           </div>
         </div>
@@ -155,9 +159,9 @@ function ContentListLayout ({ content, setContent, message, setMessage, submit }
             onChange={handleChange}
           >
             <option></option>
-            <option value="public">{__('Todo Mundo')}</option>
-            <option value="subscibers">{__('Assinantes')}</option>
-            <option value="private">{__('Ninguém')}</option>
+            <option data-testid="public" value="public">{__('Todo Mundo')}</option>
+            <option data-testid="subscribers" value="subscibers">{__('Assinantes')}</option>
+            <option data-testid="private" value="private">{__('Ninguém')}</option>
           </select>
         </div>
       </form>
