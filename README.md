@@ -38,3 +38,11 @@ docker compose down
 ```
 ### Para acessar a aplicação
 [localhost:8080/content](http://localhost:8080/content)
+
+## TODO
+
+* evitar imagens em base64
+* evitar multiplos clicks em botões
+* navegar para edit depois do post
+* testar API e regras de negócio
+* testar ações de usuário na interface
