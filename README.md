@@ -45,4 +45,5 @@ docker compose down
 * evitar multiplos clicks em botões
 * navegar para edit depois do post
 * testar API e regras de negócio
+* implementar errorHandler completo com os códigos http certos
 * testar ações de usuário na interface
